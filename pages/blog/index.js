@@ -1,6 +1,11 @@
+import { use } from "react";
+
 const { default: Link } = require("next/link");
 
 function Blog({posts}) {
+
+
+
 return (
     <ul>
         {posts.map((post) => (
@@ -17,12 +22,11 @@ export async function getStaticProps() {
 
     const res = await fetch('https://jsonplaceholder.typicode.com/posts')
     const posts = await res.json();
-
-    return {
-        props: {
-          posts,
-        },
-      }
+return {
+    props:{
+        posts
+    }
+}
 
 };
 
